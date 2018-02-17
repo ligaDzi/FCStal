@@ -290,7 +290,7 @@ module.exports = {
 
     // Принцип работы циклов for of и for in
     get_data: function(){
-        
+        // Коментарий
 
         let rows = ['rows1', 'rows2', 'rows3', 'rows4', 'rows5'];
 
