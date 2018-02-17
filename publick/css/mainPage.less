@@ -1,0 +1,754 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    &::selection {
+        background: #c0060a;
+        color: #fff;
+    }
+}
+/*Миксины*/
+.flex() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.columnFlex() {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.horizontalFlex() {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.setingFlex(@set: 0) {
+    -webkit-box-flex: @set;
+    flex-grow: @set;
+    flex-shrink: @set;
+}
+.centerFlex() {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.justifyCenterFlex(){
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.justifyBeetFlex() {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.wrapFlex() {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.scaleMix(@x: 1) {
+    -ms-transform: scale(@x);
+    -o-transform: scale(@x);
+    -webkit-transform: scale(@x);
+    transform: scale(@x);
+}
+.inlineFlex() {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+.transitionCubicBezier() {
+    transition: -webkit-transform 1s cubic-bezier(.215,.61,.355,1);
+    transition: transform 1s cubic-bezier(.215,.61,.355,1);
+    transition: transform 1s cubic-bezier(.215,.61,.355,1),-webkit-transform 1s cubic-bezier(.215,.61,.355,1);
+}
+.content {
+    background-color: #fff;
+    padding: 60px 0 0;
+    .flex();
+    .columnFlex();
+    height: 100vh;
+    
+}
+.main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    position: relative;
+}
+/*Шапка контента - Карусель с банерами, календарь и турнирная таблица*/
+.main_page {
+    .tablo {
+        .flex();
+        .columnFlex();
+        min-height: 450px;
+        max-height: 700px;
+        width: 100%;
+        background-color: #000;
+
+        .carousel {
+            position: relative;
+            .setingFlex(1);
+            flex-basis: calc(100vh - 270px);
+            background-color: #1f1f1f;
+        }
+
+        .matche {
+            width: 100%;
+            height: 140px;
+            .flex();
+            .setingFlex();
+            background-color: #1f1f1f;
+
+            .next_match {
+                width: 100%;
+                background-color: #383838;
+                .flex();
+                .columnFlex();
+
+                .next_match_head {
+                    padding: 30px;
+                    display: none;
+                    .centerFlex();
+                    .justifyCenterFlex();
+                    font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    letter-spacing: 0;
+                    font-size: 18px;
+                    color: #fff;
+                    text-align: center;
+                    text-transform: uppercase;
+                    background-color: #2b2b2b;
+
+                    strong {
+                        font-weight: 700;
+                    }
+                }
+
+                .next_match_details {
+                    position: relative;
+                    overflow: hidden;
+                    padding: 20px;
+                    display: block;
+                    .setingFlex(1);
+                    text-decoration: none;
+
+                    .next_match_bg {
+                        background-image: url('../img/стадион11.png');
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: 50%;
+                        background-repeat: no-repeat;
+                        .transitionCubicBezier();
+                    }
+
+                    .next_match_tourner {
+                        color:#fff;
+                        display: none;
+                        width: 100%;
+                        height: 30px;
+                        margin-right: auto;
+                        margin-left: auto;
+                        text-align: center;
+                        font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        letter-spacing: 0;
+                        font-size: 12px;
+
+                        .logo_tourner {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 40px;
+                            height: 30px;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        }
+                    }
+
+                    .next_match_teams {
+                        display: none;
+                        margin: 30px auto;
+                        text-align: center;
+                        font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        letter-spacing: 0;
+                        font-size: 14px;
+                        color: #fff;
+
+                        .next_match__badge {
+                            width: auto;
+                            height: 95px;
+                            vertical-align: middle;
+                        }
+
+                        .next_match__badge.home {
+                            margin-right: 15px;
+                        }
+
+                        .next_match__badge.away {
+                            margin-left: 15px;
+                        }
+                    }
+
+
+
+                    .next_match_date {
+                        position: relative;
+                        font-family: 'Exo 2', Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        letter-spacing: 0;
+                        color: #fff;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .short_table {
+                width: 100%;
+                background-color: #1f1f1f;
+                color: #e3e3e3;
+                -webkit-box-flex: 1;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                .justifyBeetFlex();
+                .flex();
+                .columnFlex();
+                font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: 0;
+                font-size: 14px;
+                padding: 20px;
+                position: relative;
+
+                tr.stal_main {
+                    color: #fff;
+                    background-color: #d10a11;
+                }
+
+                table {
+                    width: 100%;
+                    display: none;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+
+                    td {
+                        padding: 20px;
+                        border-bottom: 1px solid #383838;
+
+                        &:first-child, &:last-child {
+                            text-align: center;
+                        }
+                    }
+
+                    thead {
+                        color: #777;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+.hidden_on_desktop {
+    display: block;
+
+    .title {
+        position: relative;
+        font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        font-size: 18px;
+        letter-spacing: -.02em;
+        line-height: 1.22222222;
+        color: #d10a11;
+    }
+
+    .title_x_small {
+        font-size: 12px;
+    }
+
+    .color_white {
+        color: #fff;
+    }
+
+    .next_event {
+        position: relative;
+        font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0;
+        font-size: 10px;
+        line-height: 1.2em;
+        color: #fff;
+        opacity: 0.6;
+        margin-top: 5px;
+    }
+
+    .next_mobile_team {
+        position: relative;
+        font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0;
+        font-size: 12px;
+        line-height: 1.2em;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+}
+.table_position {
+    color: #d10a11;
+    font-size: 66px;
+    line-height: 1em;
+    font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+}
+.btn {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0;
+    font-size: 11px;
+    text-decoration: none;
+    .centerFlex();
+    cursor: pointer;
+    color: #fff;
+
+    .btn_img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 12px;
+        height: 12px;
+        background-image: url('../img/icon/keyboard-right.png');
+        background-size: contain;
+        transition: .5s;
+    }
+}
+.btn_block {
+    .flex();
+    .centerFlex();
+    padding: 25px;
+    text-transform: uppercase;
+}
+.short_table .btn {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.margin_left{
+    margin-left:10px;
+}
+.next_match_details .btn {
+    display: none;
+}
+.scaleUp {
+    .scaleMix(1.2);
+}
+
+/*Блок новостей*/
+.news_feed {
+    background-color: #f8f8f8;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+
+    .news_feed_header {
+        margin: 2rem 0;
+        background-color: #fff;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .news_feed_content {
+        .flex();
+        .horizontalFlex();
+        .wrapFlex();
+        box-sizing: border-box;
+        padding: 20px;
+        max-width: 1150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .center_items {
+        .justifyCenterFlex();
+    }
+
+    .list_item {
+        position: relative;
+        font-size: 20px;
+        width: 100%;
+        vertical-align: top;
+        padding: 0px;
+        border-bottom: 1px solid #808080;
+        margin: 1rem .2rem;
+        background-color: #fff;
+        cursor: pointer;
+
+        .card {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            text-decoration: none;
+
+            .card_thumb {
+                display: block;
+                position: relative;
+                margin: -1px;
+                overflow: hidden;
+
+                .card_image {
+                    width: 100%;
+                    height: 200px;
+                    background-size: 100% 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    .transitionCubicBezier();
+                }
+            }
+
+
+            .card_conten {
+                display: block;
+                position: relative;
+                padding: 20px;
+
+                .card_text {
+                    font-size: 18px;
+                    color: #000;
+                    line-height: 1.3;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .date {
+        .inlineFlex();
+        .centerFlex();
+        font-family: Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #777;
+
+        img {
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+            margin-top: 15px;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .news_feed_more {
+        background-color: #fff;
+        padding: 30px;
+        text-align: center;
+        border-top: 1px solid #c7c7c7;
+
+        .moreClick{
+            cursor: pointer;
+        }
+
+        p {
+            width: 200px;
+            margin: auto;
+            padding: 16px 28px;
+            text-align: center;
+            text-transform: uppercase;
+            white-space: nowrap;
+            background-color: #c90c0f;
+            color: #fff;
+            transition: background-color .3s ease-out;
+
+            &:hover {
+                background-color: #a90d10;
+            }
+        }
+    }
+}
+
+/*Подвал сайта*/
+footer {
+    border-top: 7px solid #c90c0f;
+
+    .footer_marcet {
+        background-color: #2b2b2b;
+        height: 150px;
+        .flex();
+        .horizontalFlex();
+
+        .footer_logo {
+            width: 10%;
+
+            .footer_logo_img {
+                width: 100%;
+                height:100%;
+                margin-top: 55px;
+                margin-left: 2rem;
+                background-image: url('../img/logo/Stal_Logo43.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .footer_list_market {
+            width: 90%;
+            font-size: 1.9rem;
+            color: #c7c7c7;
+            text-align: center;
+
+            p {
+                margin-top: 50px;
+            }
+        }
+    }
+
+    .footer_copyright {
+        height: 50px;
+        padding: 20px;
+        background-color: #000;
+        font-size: .9rem;
+        color: #e3e3e3;
+        text-align: center;
+
+        a {
+            color: #e3e3e3;
+            margin-left: 20px;
+
+            &:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/* Для дисплея с разрешением больше 640 пискелей */
+@media (min-width: 640px){
+    .news_feed {
+        .news_feed_header {
+            font-size: 30px;
+        }
+
+        .list_item {
+            width: 47%;
+            margin: 1rem .5rem;
+
+            .card {
+                .flex();
+                .columnFlex();
+
+                .card_conten {
+                    .flex();
+                    .columnFlex();
+                    .setingFlex(1);
+                }
+            }
+        }
+    }
+
+}
+/* Для дисплея с разрешением больше 768 пискелей */
+@media (min-width: 768px) {
+    .content {
+        padding: 70px 0 0;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+    .news_feed {
+
+        .news_feed_header {
+            font-size: 36px;
+        }
+
+        list_item {
+            .card {
+                .card_conten {
+                    .card_text {
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Для дисплея с разрешением больше 1024 пискелей */
+@media (min-width: 1024px) {
+
+    .content {
+        padding-left: 150px;
+        padding-top: 0;
+        
+    }
+
+    .main_page {
+        .tablo {
+            .horizontalFlex();
+            min-height: 680px;
+            max-height: 1065px;
+            height: calc(100vh - 180px);
+
+            .carousel {
+                flex-basis: auto;
+            }
+
+            .matche {
+                width: 30%;
+                height: auto;
+                min-width: 250px;
+                max-width: 470px;
+                .flex();
+                .columnFlex();
+
+                .next_match {
+                    width: 100%;
+                    background-color: #383838;
+                    .flex();
+                    .columnFlex();
+                    display: block;
+
+                    .next_match_head {
+                        .flex();
+
+                        strong {
+                            margin-right: 5px;
+                        }
+                    }
+
+                    .next_match_details {
+                        .flex();
+                        .columnFlex();
+                        .justifyBeetFlex();
+                        .centerFlex();
+                        padding: 30px;
+                        height: 315px;
+
+                        .next_match_tourner {
+                            display: block;
+                            position: relative;
+                        }
+
+                        .next_match_teams {
+                            display: block;
+                            position: relative;
+                            white-space: nowrap;
+                            margin: 0;
+                        }
+
+                        
+
+                        .next_match_date {
+                            text-align: center;
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hidden_on_desktop {
+        display: none;
+    }
+    .next_match_details .btn {
+        display: table;
+        position: relative;
+    }
+    .main_page .tablo .matche .short_table {
+        padding: 0;
+        .setingFlex(1);
+
+        table {
+            display: table;
+        }
+    }
+    .short_table .btn {
+        opacity: 1;
+        position: static;
+        width: 100%;
+        height: 100%;
+        transition: .2s linear;
+
+        span {
+            margin: auto;
+        }
+
+        &:hover {
+            background-color: #383838;
+        }
+    }
+
+    .news_feed {
+
+        .news_feed_header {
+            padding: 30px 0;
+        }
+
+        .news_feed_content {
+            padding: 30px;
+        }
+    }
+    footer {
+        .footer_marcet {
+            .footer_logo {
+                .footer_logo_img {
+                    margin-top: 30px;
+                    background-size:90px;
+                }
+            }
+        }
+    }
+}
+
+/* Для дисплея с разрешением больше 1200 пискелей */
+@media (min-width: 1200px){
+    .news_feed {
+        .list_item {
+            width: 30%;
+            margin: 1rem;
+        }
+
+        .center_items {
+            -webkit-box-pack: initial;
+            -ms-flex-pack: initial;
+            justify-content: initial;
+        }
+    }
+}

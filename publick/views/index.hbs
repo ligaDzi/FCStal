@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ФК Сталь Алчевск</title>    
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <link href="lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/menuMobile.css" rel="stylesheet" />
+    <link href="css/content.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/menuPage.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/mainPage.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/newsPage.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/calendarTable.less" rel="stylesheet/less" type="text/css" /> 
+    <link href="css/tablePFL.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/team.less" rel="stylesheet/less" type="text/css" />  
+    <link href="css/history.less" rel="stylesheet/less" type="text/css" /> 
+    <script src="lib/less.js"></script>
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script src="lib/owl.carousel.min.js"></script>
+    <link href="css/carouselMainPage.css" rel="stylesheet" />
+    <script src="js/carouselMainPage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/menuMobile.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!--Основное меню-->
+        <nav class="nav_main">
+            <a href="/" class="nav_logo">
+                <img src="img/logo/Stal_Logo3.png" />
+            </a>
+            <ul class="nav_list">
+                <li class="nav_item"><a class="nav_link is_active" href="/">Гланая</a></li>
+                <li id="news" class="nav_item"><a class="nav_link" href="#">Новости</a></li>
+                <li id="calendar" class="nav_item"><a class="nav_link" href="#">Матчи</a></li>
+                <li id="team" class="nav_item"><a class="nav_link" href="#">Команда</a></li>
+                <li id="history" class="nav_item"><a class="nav_link" href="#">Клуб</a></li>
+            </ul>
+        </nav>
+        <!--Мобильное меню-->
+        <nav class="nav_mobile">
+            <a href="/">
+                <img id="mobile_logo" src="img/logo/Stal_Logo.png" />
+            </a>
+            <div class="nav_mobile_text">
+                <strong>Главная</strong>
+            </div>
+            <div>
+                <div class="hamburger" id="hamburger-1">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </nav>
+        <!--Контент сайта-->
+        <div class="content">
+            <!-- Главный контент -->
+            <section class="main">
+                <div class="main_page">
+                    <!-- Шапка контента - Карусель с банерами, календарь и турнирная таблица -->
+                    <div class="tablo">
+                        <div class="carousel">
+                            <div class="container">
+                                <div class="owl-demo">
+                                    <div class="owl-carousel">
+                                        <div class="item">
+                                            <div style="background-image: url('../img/{{baner1.imgHeader}}');" class="slidImg grayscale">
+                                            </div>
+                                            <p class="slideText">
+                                                <a class="slideTextUrl" href="#" data-idNews={{baner1.id}}>
+                                                    <h1 class="slideTextHeader">{{baner1.headerNews}}</h1>
+                                                </a>
+                                            </p>
+                                            <div class="noMainRed linearGrad">
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div style="background-image: url('../img/{{baner2.imgHeader}}');" class="slidImg grayscale">
+                                            </div>
+                                            <p class="slideText">
+                                                <a class="slideTextUrl" href="#" data-idNews={{baner2.id}}>
+                                                    <h1 class="slideTextHeader">{{baner2.headerNews}}</h1>
+                                                </a>
+                                            </p>
+                                            <div class="noMainRed linearGrad">
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div style="background-image: url('../img/{{baner3.imgHeader}}');" class="slidImg grayscale">
+                                            </div>
+                                            <p class="slideText">
+                                                <a class="slideTextUrl" href="#" data-idNews={{baner3.id}}>
+                                                    <h1 class="slideTextHeader">{{baner3.headerNews}}</h1>
+                                                </a>
+                                            </p>
+                                            <div class="noMainRed linearGrad">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="matche">
+                            <div class="next_match">
+                                <div class="next_match_head">
+                                    <strong>Следующий</strong>
+                                    Матч  
+                                </div>
+                                <a class="next_match_details" href="#">
+                                    <div class="next_match_bg"></div>
+                                    <div class="next_match_tourner">
+                                       <img class="logo_tourner" src="img/logo/{{nextLogoTourn}}" />
+                                       <span>{{nextTournament}}</span>
+                                    </div>
+                                    <div class="next_match_teams">
+                                        <img class="next_match__badge home" src="img/logo/{{nextLogoHost}}" />
+                                        v
+                                        <img class="next_match__badge away" src="img/logo/{{nextLogoVisit}}" />
+                                    </div>
+                                    <div class="hidden_on_desktop">
+                                        <div class="title title_x_small color_white">Следующий матч</div>
+                                        <div class="next_event">{{nextTournament}}</div> 
+                                        <div class="next_mobile_team"><strong>{{nextOpponent}}</strong></div>    
+                                    </div>
+                                    <div class="next_match_date">
+                                        <strong>{{nexDate}}</strong>
+                                        {{nextTime}}
+                                    </div>
+                                    <span id="btn_calendar" class="btn">
+                                        Календарь
+                                        <div class="btn_img"></div>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="short_table">
+                                <table cellpadding="0">
+                                    <thead>                                        
+                                        <tr>
+                                            <td>М</td>
+                                            <td>Команда</td>
+                                            <td>О</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each teams}}
+                                        <tr class="{{this.stal}}">
+                                            <td>{{this.position}}</td>
+                                            <td>{{this.nameTeam}}</td>
+                                            <td>{{this.points}}</td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                                <div class="hidden_on_desktop">
+                                    <div class="title title_x_small color_white">Место в Лиги</div>
+                                    <div class="table_position">6</div>
+                                </div>
+                                <a id="btn_table" href="#" class="btn btn_block">
+                                    <span>
+                                        Таблица
+                                        <div class="btn_img"></div>
+                                    </span>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- Блок новостей -->
+                    <div class="news_feed">
+                        <div class="news_feed_header  header_calendar h1Calendar">Новости</div>
+                        <div class="news_feed_content center_items">
+
+                            {{#each news}}
+            
+                            <div class="list_item" data-idNews={{this.id}}>
+                                <a class="card" href="#">
+                                    <div class="card_thumb">
+                                        <div style="background-image: url('../img/{{this.imgHeader}}');" class="card_image">
+                                        </div>
+                                    </div>
+                                    <div class="card_conten">
+                                        <span class="date">
+                                            <img src="img/icon/schedule-button.png" />
+                                            {{this.dateNews}}
+                                        </span>
+                                        <div class="card_text">
+                                            <p>{{this.headerNews}}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            {{/each}}
+
+                           
+                        </div>
+                        <div class="news_feed_more">
+                            <a class="moreClick">
+                                <p>Больше новостей</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+            <!-- ГПодвал сайта -->
+            <footer>
+                <div class="footer_marcet">
+                    <div class="footer_logo">
+                        <div class="footer_logo_img">
+                        </div>
+                    </div>
+                    <div class="footer_list_market">
+                        <p>Спонсоры</p>
+                    </div>
+                </div>
+                <div class="footer_copyright">
+                    Материалы взяты на сайте
+                    <a href="http://www.fcstal.lg.ua/">www.fcstal.lg.ua</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+﻿.tablePFL {
+    position: relative;
+    display: table;
+    width: 90%;
+    max-width:1050px;
+    margin:auto;
+    margin-bottom:2rem;
+}
+.table_basis {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: transparent;
+    margin: 0;
+    text-transform: none;
+    width: 100%;
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+    }
+}
+
+.full_view {
+    td {
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        -o-border-image: none;
+        border-image: none;
+        border-style: solid none;
+        border-width: 1px 0;
+    }
+} 
+.table_labels {
+    color: #4A4A4A;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 14px;
+    border-top: none;
+    border-color: #000;
+    line-height: 25px;
+    text-align: center;
+    padding-left: 40px;
+    text-transform: uppercase;
+}
+.table_abbr[title] {
+    cursor: help;
+    line-height: 1.1em;
+    margin: 0 0 6px;
+    display: table;
+    width: 100%;
+}
+.table_pos {
+    position: static;
+    float: none;
+    display: table-cell;
+    background: #000;
+    border-bottom: 1px solid #FFF;
+    color: #FFF;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    width: 48px;
+    height: 48px;
+}
+.table_position_first {
+    background: #000;
+}
+.table_team {
+    color: #000;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 12px;
+    padding-left: 20px;
+    text-align: left;
+    font-weight: 600;
+}
+.table_statistic {
+    font-family: 'Exo 2', sans-serif;
+    color: #4A4A4A;
+    text-align: left;
+    padding-left: 40px;
+    font-size: 12px;
+    width: 1%;
+    white-space: nowrap;
+    font-weight: 500;
+}
+.stal {
+    .table_pos {
+        background: #D0021B;
+        color: #FFF;
+    }
+
+    td {
+        color: #D0021B;
+        border-bottom: none;
+    }
+}
+.display_high{
+    display:none;
+}
+/* Для дисплея с разрешением больше 768 пискелей */
+@media (min-width: 768px){
+    .display_high {
+        display: table-cell;
+    }
+    .table_statistic {
+        font-size: 15px;
+    }
+
+    .table_team {
+        font-size: 15px;
+    }
+
+    .table_pos {
+        font-size: 15px;
+    }
+}
+/* Для дисплея с разрешением больше 1024 пискелей */
+@media (min-width: 1024px) {
+    .table_statistic {
+        font-size: 24px;
+    }
+
+    .table_team {
+        font-size: 24px;
+    }
+
+    .table_pos {
+        font-size: 24px;
+    }
+}

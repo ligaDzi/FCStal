@@ -1,0 +1,81 @@
+
+
+<div class="top_nav">
+    <a id="tab_calendar" href="#" class="top_nav_item">
+        Календарь
+    </a>
+    <a id="tab_table" href="#" class="top_nav_item leftLine activ_item">
+         Таблица
+    </a>
+</div>
+<div class="header_calendar">
+    <h1 class="h1Calendar">Сезон <span>2013/14</span></h1>
+</div>
+
+{{!-- див со стилем style="display:none" нужен для организации плавного появления страницы на экране--}}
+<div class="tableNone"  style="display:none">
+    <div class="tablePFL">
+        <table class="table_basis">
+            <tbody>
+                <tr class="first_tr">
+                    <td class="table_labels" style="border-bottom:1px solid #000" colspan="2">
+                    </td>
+                    <td class="table_labels">
+                        <div class="table_abbr" title="Игры">
+                            И
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Победы">
+                            В
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Ничьи">
+                            Н
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Поражения">
+                            П
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Голы">
+                            Г
+                        </div>
+                    </td>
+                    <td class="table_labels">
+                        <div class="table_abbr" title="Разница">
+                            Р
+                        </div>
+                    </td>
+                    <td class="table_labels">
+                        <div class="table_abbr" title="Очки">
+                            О
+                        </div>
+                    </td>
+                    <td class="table_labels display_high"></td>
+                </tr>
+                {{#each teams}}
+                <tr class="full_view {{this.stal}}">
+                    <td class="table_pos table_position_first">
+                        {{this.position}}
+                    </td>
+                    <td class="table_team">
+                        <span>{{this.nameTeam}}</span>
+                    </td>
+                    <td class="table_statistic">{{this.gamesNum}}</td>
+                    <td class="table_statistic display_high">{{this.victoryNum}}</td>
+                    <td class="table_statistic display_high">{{this.drawsNum}}</td>
+                    <td class="table_statistic display_high">{{this.lesionsNum}}</td>
+                    <td class="table_statistic display_high">{{this.goalScore}} : {{this.goalMissed}}</td>
+                    <td class="table_statistic">{{this.diffGoal}}</td>
+                    <td class="table_statistic">{{this.points}}</td>
+                    <td class="table_statistic display_high"></td>
+                </tr>
+                {{/each}}           
+            </tbody>
+        </table>
+    </div>
+</div>

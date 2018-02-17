@@ -1,0 +1,30 @@
+<div class="news_box">
+    <div class="news_box_content">
+        <div class="article">
+            <!-- Заголовок новости -->
+            <div class="article_header">
+                <header class="article_header_text">
+                    <h1>{{headerNews}}</h1>
+                    <div class="article_header_info">
+                        <span class="date">
+                            <img src="img/icon/schedule-button.png" />
+                            {{dateNews}}
+                        </span>
+                        <span class="autor">{{sourceNews}}</span>
+                    </div>
+                </header>
+            </div>
+            <!-- Фотография к новости -->
+            <div class="article_img">
+                <div class="article_bcimg" style="background-image:url('../img/{{imgHeader}}')"></div>
+            </div>
+            <!-- Текст новости -->
+            <div class="article_content">
+               {{bodyNews}}
+            </div>
+        </div>
+    </div>
+    <div class="news_box_close">
+        <div class="img_close_news"></div>
+    </div>
+</div>

@@ -1,0 +1,305 @@
+﻿.flex() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.wrapFlex() {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.justifyCenterFlex() {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.justifyBeetFlex() {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.justifyAraundFlex() {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-around;
+}
+.justifyNoneFlex() {
+    -webkit-box-pack: initial;
+    -ms-flex-pack: initial;
+    justify-content: initial;
+}
+.teamNone{
+    background-color: #f8f8f8;
+}
+.group_foto {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-image: url('../img/team/Stal2013_apr_big-min.jpg');
+
+    p {
+        padding: .5rem 1rem;
+    }
+
+    span {
+        color: #fff;
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    span:first-of-type {
+        font-size: 2rem;
+        margin-right: 0;
+    }
+
+    span:last-child {
+        font-size: 1rem;
+    }
+}
+.team_row {
+    width: 99%;
+    padding: 20px 0;
+}
+.team_row_margin {
+    margin-left: 1rem;
+}
+.header_team {
+    font-family: 'Exo 2', Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.players_block {
+    .flex();
+    .wrapFlex();
+    .justifyCenterFlex();
+    margin-top: 2rem;
+}
+.player_div {
+    width: 290px;
+    height: 400px;
+    margin: 10px 0;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 5px #c7c7c7;
+}
+.player_infoBlock {
+    width: 100%;
+    height: 75%;
+}
+.cursorPointer{
+    cursor: pointer;
+}
+.player_name {
+    width: 100%;
+    height: 25%;
+    border-top: 1px solid #000;
+
+}
+.players_flexRow {
+    .flex();
+    margin-top: 10px;
+}
+.player_number {
+    width: 35%;
+
+    .num {
+        margin-left: 15px;
+        text-align: center;
+        font-family: 'Exo 2', Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+        font-size: 4rem;
+        font-weight: 600;
+        color: #d40404;
+    }
+}
+.player_nameSurname {
+    width: 65%;
+    font-family: 'Exo 2', Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+    font-size: 1.5rem;
+    font-weight:600;
+}
+.player_nameSurname_margin {
+    margin:12px 0 0 30px;
+}
+.one_player_surname {
+    color: #d40404;
+}
+.player_infoBlock_margin {
+    position:relative;
+    width: 95%;
+    height: 95%;
+    margin: 2.5%;
+}
+.player_infoBlock_foto {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    background-image: url('../img/team/Stepanyuk.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.player_infoBlock_info {
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    top: 0;
+    opacity:0.9;
+    color:#fff;
+    background-color: #d40404;
+}
+.player_infoBlock_info_opacity {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Exo 2', Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    opacity:0;
+}
+.player_infoBlock_info_age {
+    text-align: right;
+    font-style: italic;
+    font-size: 2.5rem;
+    margin: 10px 15px 0 0;
+}
+.player_infoBlock_info_flex{
+    .flex();
+    width:100%;
+    margin-top:20px;
+}
+.player_info_named{
+    width:70%;
+    margin-left:1rem;
+    p{
+        margin-top:10px;
+    }
+}
+.player_info_count {
+    width: 30%;
+    text-align: center;
+
+    p {
+        margin-top: 10px;
+        span{
+            color:#ffd800;
+        }
+    }
+}
+.managment {
+    text-align: center;
+    font-family: 'Exo 2', Brutal Type,Helvetica-Neue,Helvetica,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 15px;
+
+    p:first-child {
+        color: #d40404;
+    }
+}
+/* Для дисплея с разрешением больше 640 пискелей */
+@media (min-width: 640px) {
+    .group_foto {
+        height: 350px;
+
+
+        span:first-of-type {
+            font-size: 3rem;
+            margin-right: .5rem;
+        }
+
+        span:last-child {
+            font-size: 2rem;
+        }
+    }
+
+    .team_row_margin {
+        margin-left: 1.5rem;
+    }
+
+    .players_block {
+        .justifyBeetFlex();
+    }
+
+    .header_team {
+        font-size: 1rem;
+    }
+}
+/* Для дисплея с разрешением больше 667 пискелей */
+@media (min-width: 667px){
+
+    .player_div {
+        width: 300px;
+    }
+}
+/* Для дисплея с разрешением больше 768 пискелей */
+@media (min-width: 736px) {
+
+    .group_foto {
+        height: 400px;
+
+        p {
+            padding: 1rem 3rem;
+        }
+
+        span:first-of-type {
+            font-size: 4rem;
+            margin-right: 2rem;
+        }
+
+        span:last-child {
+            font-size: 2rem;
+        }
+    }
+    .team_row {
+        padding: 30px 0;
+    }
+    .team_row_margin{
+        margin-left: 3rem;
+    } 
+    .header_team {
+        font-size: 1.2rem;
+    }
+    .players_block {
+        .justifyAraundFlex();
+    }
+}
+/* Для дисплея с разрешением больше 1024 пискелей */
+@media (min-width: 1025px){
+    .group_foto {
+        height: 750px;
+
+        p {
+            padding: 2rem 5rem;
+        }
+
+        span:first-of-type {
+            font-size: 6rem;
+            margin-right: 3rem;
+        }
+
+        span:last-child {
+            font-size: 3rem;
+        }
+    }
+    .team_row {
+        padding: 40px 0;
+    }
+    .team_row_margin{
+        margin-left: 5rem;
+    } 
+    .header_team {
+        font-size: 2rem;
+    }
+    .players_block {
+        .justifyNoneFlex();
+    }
+    .player_div{
+        margin-right:10px;
+    }
+}

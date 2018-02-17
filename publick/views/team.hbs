@@ -1,0 +1,261 @@
+{{!-- див со стилем style="display:none" нужен для организации плавного появления страницы на экране--}}
+<div class="teamNone"   style="display:none"> 
+
+      <div class="group_foto"> 
+                    <p>
+                        <span>Сталь</span>
+                        <span> 2013/14</span>
+                    </p>
+                </div>
+                <div class="team_row">
+                    <div class="team_row_margin">
+                        <div class="header_team">
+                            Голкиперы
+                        </div>
+                        <div class="players_block">
+                            
+                            {{#each goalkeepersHBS}}
+                            <div class="player_div">
+                                <div class="player_infoBlock cursorPointer">
+                                    <div class="player_infoBlock_margin">
+                                        <div class="player_infoBlock_foto" style=" background-image: url('img/team/{{this.foto}}');">                                            
+                                        </div>
+                                        <div class="player_infoBlock_info"> 
+                                            <div class="player_infoBlock_info_opacity">
+                                                <div class="player_infoBlock_info_age">{{this.birthday}}</div>
+                                                <div class="player_infoBlock_info_flex">
+                                                    <div class="player_info_named">
+                                                        <p>Игры:</p>
+                                                        <p>Голы:</p>
+                                                        <p>Передачи:</p>
+                                                        <p>Карточки:</p>
+                                                    </div>
+                                                    <div class="player_info_count">
+                                                        <p>{{this.game}}</p>
+                                                        <p>{{this.goal}}</p>
+                                                        <p>{{this.goalPass}}</p>
+                                                        <p><span>{{this.yellowCart}}</span>/{{this.redCart}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="player_name">
+                                    <div class="players_flexRow">
+                                        <div class="player_number">
+                                            <div class="num">{{this.number}}</div>
+                                        </div>
+                                        <div class="player_nameSurname">
+                                            <div class="player_nameSurname_margin">
+                                                <div class="one_player_name">{{this.name}}</div>
+                                                <div class="one_player_surname">{{this.surname}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}                           
+
+                        </div>
+                    </div>   
+
+                    <div class="team_row">
+                    <div class="team_row_margin">
+                        <div class="header_team">
+                            Защитники
+                        </div>
+                        <div class="players_block">
+                            
+                            {{#each backsHBS}}
+                            <div class="player_div">
+                                <div class="player_infoBlock cursorPointer">
+                                    <div class="player_infoBlock_margin">
+                                        <div class="player_infoBlock_foto" style=" background-image: url('img/team/{{this.foto}}');">                                            
+                                        </div>
+                                        <div class="player_infoBlock_info"> 
+                                            <div class="player_infoBlock_info_opacity">
+                                                <div class="player_infoBlock_info_age">{{this.birthday}}</div>
+                                                <div class="player_infoBlock_info_flex">
+                                                    <div class="player_info_named">
+                                                        <p>Игры:</p>
+                                                        <p>Голы:</p>
+                                                        <p>Передачи:</p>
+                                                        <p>Карточки:</p>
+                                                    </div>
+                                                    <div class="player_info_count">
+                                                        <p>{{this.game}}</p>
+                                                        <p>{{this.goal}}</p>
+                                                        <p>{{this.goalPass}}</p>
+                                                        <p><span>{{this.yellowCart}}</span>/{{this.redCart}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="player_name">
+                                    <div class="players_flexRow">
+                                        <div class="player_number">
+                                            <div class="num">{{this.number}}</div>
+                                        </div>
+                                        <div class="player_nameSurname">
+                                            <div class="player_nameSurname_margin">
+                                                <div class="one_player_name">{{this.name}}</div>
+                                                <div class="one_player_surname">{{this.surname}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}                           
+
+                        </div>
+                    </div>   
+
+                    <div class="team_row">
+                    <div class="team_row_margin">
+                        <div class="header_team">
+                            Полузащитники
+                        </div>
+                        <div class="players_block">
+                            
+                            {{#each halfbacksHBS}}
+                            <div class="player_div">
+                                <div class="player_infoBlock cursorPointer">
+                                    <div class="player_infoBlock_margin">
+                                        <div class="player_infoBlock_foto" style=" background-image: url('img/team/{{this.foto}}');">                                            
+                                        </div>
+                                        <div class="player_infoBlock_info"> 
+                                            <div class="player_infoBlock_info_opacity">
+                                                <div class="player_infoBlock_info_age">{{this.birthday}}</div>
+                                                <div class="player_infoBlock_info_flex">
+                                                    <div class="player_info_named">
+                                                        <p>Игры:</p>
+                                                        <p>Голы:</p>
+                                                        <p>Передачи:</p>
+                                                        <p>Карточки:</p>
+                                                    </div>
+                                                    <div class="player_info_count">
+                                                        <p>{{this.game}}</p>
+                                                        <p>{{this.goal}}</p>
+                                                        <p>{{this.goalPass}}</p>
+                                                        <p><span>{{this.yellowCart}}</span>/{{this.redCart}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="player_name">
+                                    <div class="players_flexRow">
+                                        <div class="player_number">
+                                            <div class="num">{{this.number}}</div>
+                                        </div>
+                                        <div class="player_nameSurname">
+                                            <div class="player_nameSurname_margin">
+                                                <div class="one_player_name">{{this.name}}</div>
+                                                <div class="one_player_surname">{{this.surname}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}                           
+
+                        </div>
+                    </div>   
+
+                    <div class="team_row">
+                    <div class="team_row_margin">
+                        <div class="header_team">
+                            Нападающие
+                        </div>
+                        <div class="players_block">
+                            
+                            {{#each forwardsHBS}}
+                            <div class="player_div">
+                                <div class="player_infoBlock cursorPointer">
+                                    <div class="player_infoBlock_margin">
+                                        <div class="player_infoBlock_foto" style=" background-image: url('img/team/{{this.foto}}');">                                            
+                                        </div>
+                                        <div class="player_infoBlock_info"> 
+                                            <div class="player_infoBlock_info_opacity">
+                                                <div class="player_infoBlock_info_age">{{this.birthday}}</div>
+                                                <div class="player_infoBlock_info_flex">
+                                                    <div class="player_info_named">
+                                                        <p>Игры:</p>
+                                                        <p>Голы:</p>
+                                                        <p>Передачи:</p>
+                                                        <p>Карточки:</p>
+                                                    </div>
+                                                    <div class="player_info_count">
+                                                        <p>{{this.game}}</p>
+                                                        <p>{{this.goal}}</p>
+                                                        <p>{{this.goalPass}}</p>
+                                                        <p><span>{{this.yellowCart}}</span>/{{this.redCart}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="player_name">
+                                    <div class="players_flexRow">
+                                        <div class="player_number">
+                                            <div class="num">{{this.number}}</div>
+                                        </div>
+                                        <div class="player_nameSurname">
+                                            <div class="player_nameSurname_margin">
+                                                <div class="one_player_name">{{this.name}}</div>
+                                                <div class="one_player_surname">{{this.surname}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}                           
+
+                        </div>
+                    </div>   
+                          
+                </div>
+                <div class="team_row">
+                    <div class="team_row_margin">
+                        <div class="header_team">
+                            Тренеры
+                        </div>
+                        <div class="players_block">
+                            <div class="player_div">
+                                <div class="player_infoBlock">
+                                    <div class="player_infoBlock_margin">
+                                        <div class="player_infoBlock_foto" style="background-image: url('img/team/Volobuev.png'); ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="player_name">
+                                    <div class="managment">
+                                        <p>Главный тренер</p>
+                                        <p>Анатолий Волобуев</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="player_div">
+                                <div class="player_infoBlock">
+                                    <div class="player_infoBlock_margin">
+                                        <div class="player_infoBlock_foto" style="background-image: url('img/team/Cvik.png'); ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="player_name">
+                                    <div class="managment">
+                                        <p>Ассистент тренера</p>
+                                        <p>Андрей Цвик</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+</div>

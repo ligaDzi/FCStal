@@ -1,0 +1,33 @@
+<div class="news_feed">
+    <div class="news_feed_header header_calendar h1Calendar">Новости</div>
+    <div class="news_feed_content center_items">
+
+        {{#each news}}
+            
+        <div class="list_item" data-idNews={{this.id}}  style="display:none">
+            <a class="card" href="#">
+                <div class="card_thumb">
+                    <div style="background-image: url('../img/{{this.imgHeader}}');" class="card_image">
+                    </div>
+                </div>
+                <div class="card_conten">
+                    <span class="date">
+                        <img src="img/icon/schedule-button.png" />
+                        {{this.dateNews}}
+                    </span>
+                    <div class="card_text">
+                        <p>{{this.headerNews}}</p>
+                    </div>
+                </div>
+           </a>
+        </div>
+
+        {{/each}}
+                           
+    </div>
+    <div class="news_feed_more">
+        <a class="moreClick">
+            <p>Больше новостей</p>
+        </a>
+    </div>
+</div>

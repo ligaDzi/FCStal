@@ -1,0 +1,174 @@
+
+
+<div class="top_nav">
+    <a id="tab_calendar" href="#" class="top_nav_item activ_item">
+        Календарь
+    </a>
+    <a id="tab_table" href="#" class="top_nav_item leftLine">
+        Таблица
+    </a>
+</div>
+<div class="header_calendar">
+    <h1 class="h1Calendar">Сезон <span>2013/14</span></h1>
+</div>
+
+{{!-- див со стилем style="display:none" нужен для организации плавного появления страницы на экране--}}
+<div class="calendarNone"  style="display:none">
+    
+<div class="match_baner">
+    <div class="match_baner_content">
+        <div class="match_baner_logo">
+            <img class="icon" src="img/logo/{{nextLogoTourn}}" />
+            <span>{{nextTournament}}</span>
+        </div>
+        <div class="match_baner_items">
+            <div class="match_baner_team is_home">
+                <div class="match_baner_team_logo">
+                    <img src="img/logo/{{nextLogoHost}}" />
+                </div>
+                <div class="match_baner_team_content">
+                    <div class="match_baner_team_name">
+                        {{nextHost}}
+                    </div>
+                </div>
+            </div>
+            <span class="versus"></span>
+            <div class="match_baner_team is_away">
+                <div class="match_baner_team_logo">
+                    <img src="img/logo/{{nextLogoVisit}}" />
+                </div>
+                <div class="match_baner_team_content">
+                    <div class="match_baner_team_name">
+                         {{nextVisit}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="match_baner_counters">
+            <div class="match_date">
+                <strong>{{nexDate}} </strong>
+                {{nextTime}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="match_list">
+
+    {{#each matchs}}
+
+    {{#if monthCalendar}}
+    <div class="month_calendar">
+        <h2 class="h2Calendar"><span>{{this.months}}</span>{{this.year}}</h2>
+    </div>
+    {{/if}}
+
+    <div class="match_item">
+        <div class="match_item_content">
+            <div class="match_item_info">
+                <div class="match_info_date">
+                    <strong>{{this.day}}</strong>
+                    {{this.time}}
+                </div>
+                <div class="match_info_location">
+                    <span>{{this.tournament}}</span>
+                </div>
+            </div>
+            <div class="match_item_conteiner">
+                <div class="match_item_teams">
+                    <div class="match_item_home">
+                        <div class="match_item_team_logo">
+                            <img src="img/logo/{{this.logoHostTeam}}" />
+                        </div>
+                        <div class="match_item_team_name">
+                            {{this.nameHostTeam}}
+                        </div>
+                        <div class="match_item_team_score">
+                            {{this.goalHost}}
+                        </div>
+                    </div>
+                    <span class="match_item_versus">-</span>
+                    <div class="match_item_away">
+                        <div class="match_item_team_logo">
+                            <img src="img/logo/{{this.logoVisitTeam}}" />
+                        </div>
+                        <div class="match_item_team_name">
+                            {{this.nameVisitTeam}}
+                        </div>
+                        <div class="match_item_team_score">
+                            {{this.goalVisit}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="match_item_tourn">
+                <img src="img/logo/{{this.logoTournament}}" />
+            </div>
+        </div>
+
+        {{#if info}}
+
+        <div class="btn_result">
+            <hr/>
+        </div>
+        <div class="match_item_data" style="overflow: hidden;">
+            <div class="match_data">
+                <div class="match_data_table">
+
+                    {{#if goalBool}}    
+                    <div class="match_data_row match_data_row_goals">
+                        <div class="match_data_cell">
+                            {{this.playersGoalHost}}
+                        </div>
+                        <div class="match_data_cell match_data_cell_icon">
+                            <img src="img/icon/football-ball.png" />
+                        </div>
+                        <div class="match_data_cell">
+                            {{this.playersGoalVisit}}
+                         </div>
+                    </div>
+                    {{/if}}
+                    {{#if yellowBool}} 
+                    <div class="match_data_row">
+                        <div class="match_data_cell">
+                            {{this.playersYellowHost}}
+                        </div>
+                        <div class="match_data_cell match_data_cell_icon">
+                            <img src="img/icon/yellow-cards.png" />
+                        </div>
+                        <div class="match_data_cell">
+                            {{this.playersYellowVisit}}
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{#if redBool}}
+                    <div class="match_data_row">
+                        <div class="match_data_cell">
+                            {{this.playersRedHost}}
+                        </div>
+                        <div class="match_data_cell match_data_cell_icon">
+                            <img src="img/icon/red-cards.png" />
+                        </div>
+                        <div class="match_data_cell">
+                            {{this.playersRedVisit}}
+                        </div>
+                    </div>
+                    {{/if}}
+                    <div class="match_data_row">
+                        <span>Судья: {{this.referee}}</span>
+                        <span class="match_data_separator">|</span>
+                        <span>Стадион: {{this.stadium}}</span>
+                        <span class="match_data_separator">|</span>
+                        <span>Зрителей: {{this.audience}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>
+                  
+</div>
