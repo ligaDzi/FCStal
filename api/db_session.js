@@ -8,7 +8,7 @@ var mssql = require('mssql');
 var config = {
 	user: 'user',                   // пользователь базы данных
 	password: 'SAP1428', 	        // пароль пользователя 
-	server: 'mysql://mysql',        // хост
+	server: 'mysql',                // хост
 	database: 'lidb',               // имя бд
 	port: 3306,			            // порт, на котором запущен sql server
 	pool: {
