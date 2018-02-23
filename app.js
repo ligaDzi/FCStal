@@ -1,13 +1,16 @@
 var express = require('express');
 var app = express();
+var morgan  = require('morgan');
 
-const port = 8080;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 var bodyParser = require('body-parser');
 
 var jsonParser = bodyParser.json();
 app.use(jsonParser); 
 app.use(bodyParser.text());
+app.use(morgan('combined'));
 
 // Подключение модуля с настройками сессий
 var sassion_bd = require('./api/db_session');
@@ -41,5 +44,14 @@ app.get('/team', handlers.get_team);
 
 app.get('/history', handlers.get_history);
 
+// error handling
+app.use(function(err, req, res, next){
+    console.error(err.stack);
+    res.status(500).send('Something bad happened!');
+});
 
-app.listen(port, ()=>{console.log('Сервер запущен');});
+
+app.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
+
+module.exports = app ;
