@@ -2,10 +2,10 @@
 var mssql = require('mssql'); 
 
 var config = {
-    user : 'sh295697_db',					                // пользователь базы данных
-    password : 'h7ed2rcv',			                        // пароль пользователя
-    database : 'sh295697_db',				                // имя бд
-    server : 'sh295697.mysql.ukraine.com.ua',				// хост
+    user : 'user',					                        // пользователь базы данных
+    password : 'SAP1428',			                        // пароль пользователя
+    database : 'lidb',				                        // имя бд
+    server : 'mysql://mysql:3306/',				            // хост
     port : 1433,						                    // порт, на котором запущен sql server
     pool: {
         max: 100, 						                    // максимальное допустимое количество соединений пула 
