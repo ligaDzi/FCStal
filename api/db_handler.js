@@ -5,7 +5,7 @@ var config = {
     user : 'user',					                        // пользователь базы данных
     password : 'SAP1428',			                        // пароль пользователя
     database : 'lidb',				                        // имя бд
-    server : 'mysql',				                        // хост
+    server : process.env.OPENSHIFT_MYSQL_DB_URL,				                        // хост
     port : 3306,						                    // порт, на котором запущен sql server
     pool: {
         max: 100, 						                    // максимальное допустимое количество соединений пула 
