@@ -5,7 +5,7 @@ var config = {
     user : process.env.OPENSHIFT_MYSQL_DB_USERNAME,			// пользователь базы данных
     password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,		// пароль пользователя
     database : 'lidb',				                        // имя бд
-    server : process.env.OPENSHIFT_MYSQL_DB_HOST,			// хост
+    server : "127.0.0.1",		                        	// хост
     port : process.env.OPENSHIFT_MYSQL_DB_PORT || '3306',	// порт, на котором запущен sql server
     pool: {
         max: 10, 						                    // максимальное допустимое количество соединений пула 
