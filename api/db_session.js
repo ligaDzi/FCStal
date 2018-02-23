@@ -8,7 +8,7 @@ var mssql = require('mssql');
 var config = {
 	user: process.env.OPENSHIFT_MYSQL_DB_USERNAME,               // пользователь базы данных
 	password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD, 	         // пароль пользователя 
-	server: "127.0.0.1" ,                                        // хост
+	server: process.env.OPENSHIFT_MYSQL_DB_HOST ,                // хост
 	database: 'lidb',                                            // имя бд
 	port: process.env.OPENSHIFT_MYSQL_DB_PORT || '3306',			            // порт, на котором запущен sql server
 	pool: {
